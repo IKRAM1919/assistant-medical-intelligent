@@ -2,7 +2,7 @@
 ---
 
 
-# 🏥 Assistant Médical Intelligent (AMI)
+# 🏥 Assistant Médical Intelligent
 
 **Description courte :**
 Un assistant médical intelligent combinant **Machine Learning (ML)** et **Intelligence Artificielle Générative (LLM + RAG)** pour aider au dépistage précoce des maladies chroniques et soutenir la prise de décision médicale.
@@ -226,23 +226,30 @@ Ce projet combine **IA traditionnelle et IA générative** pour créer un **assi
 
 ```
 assistant-medical-intelligent/
-│
-├── backend/                 # FastAPI + ML + LLM
-│   ├── main.py
-│   ├── models/              # ML models, LLM utils
-│   ├── routes/
-│   ├── schemas/
-│   └── requirements.txt
-│
-├── frontend/                # React + Tailwind
-│   ├── src/
-│   ├── public/
-│   └── package.json
-│
-├── data/                    # datasets (CSV, JSON)
-├── docker-compose.yml
-├── Dockerfile
-└── README.md
+├─ backend/
+│  ├─ app/
+│  │  ├─ main.py          # FastAPI
+│  │  ├─ model.py         # ML model + prédiction
+│  │  ├─ llm_chat.py      # Chatbot LLM + RAG
+│  │  ├─ schemas.py       # Pydantic models
+│  │  └─ database.py      # Connexion PostgreSQL 
+│  └─ requirements.txt
+├─ frontend/
+│  ├─ public/
+│  ├─ src/
+│  │  ├─ App.js
+│  │  ├─ components/
+│  │  │  ├─ Dashboard.js
+│  │  │  ├─ PatientForm.js
+│  │  │  └─ Chatbot.js
+│  │  └─ services/
+│  │      └─ api.js       # appel API backend
+│  └─ package.json
+├─ models/
+│  ├─ best_medical_diagnosis_model.pkl
+│  └─ label_encoder.pkl
+└─ data/                  # CSV ou documents médicaux
+
 ```
 
 ---
